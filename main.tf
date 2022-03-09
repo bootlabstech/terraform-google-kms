@@ -11,7 +11,7 @@ resource "google_kms_crypto_key" "gcp_kms_crypto_key" {
   labels          = each.value.labels
   rotation_period = each.value.rotation_period
 
-  purpose = each.purpose
+  purpose = each.value.purpose
 
   dynamic "version_template" {
     for_each = each.value.set_version_template == true ? [1] : []
