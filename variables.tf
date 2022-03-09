@@ -12,17 +12,17 @@ variable "location_id" {
 
 variable "kms_crypto_keys" {
   description = "The list of crypto keys and their configuration to be created."
-  type        = list({
-    name                        = string,
-    labels                      = map(any),
-    rotation_period             = string,
-    purpose                     = string,
-    set_version_template        = false,
-    algorithm                   = string,
-    protection_level            = string,
-    prevent_destroy             = bool,
-    kms_key_members             = list(string)
-  })
+  type = list(object({
+    name                 = string,
+    labels               = map(any),
+    rotation_period      = string,
+    purpose              = string,
+    set_version_template = false,
+    algorithm            = string,
+    protection_level     = string,
+    prevent_destroy      = bool,
+    kms_key_members      = list(string)
+  }))
 }
 
 variable "project_id" {
