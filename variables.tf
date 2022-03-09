@@ -14,7 +14,7 @@ variable "kms_crypto_keys" {
   description = "The list of crypto keys and their configuration to be created."
   type = list(object({
     name                 = string,
-    labels               = map(any),
+    labels               = map(string),
     rotation_period      = string,
     purpose              = string,
     set_version_template = bool,

@@ -37,5 +37,5 @@ resource "google_kms_crypto_key_iam_binding" "kms_key_iam_decrypter" {
   for_each      = { for kms_crypto_key in var.kms_crypto_keys : kms_crypto_key.name => kms_crypto_key }
   crypto_key_id = google_kms_crypto_key.gcp_kms_crypto_key[each.key].id
   role          = "roles/cloudkms.cryptoKeyEncrypterDecrypter"
-  members       = each.value.members
+  members       = each.value.kms_key_members
 }
