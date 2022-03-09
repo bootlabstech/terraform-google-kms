@@ -17,10 +17,9 @@ variable "kms_crypto_keys" {
     labels               = map(any),
     rotation_period      = string,
     purpose              = string,
-    set_version_template = false,
+    set_version_template = bool,
     algorithm            = string,
     protection_level     = string,
-    prevent_destroy      = bool,
     kms_key_members      = list(string)
   }))
 }
