@@ -23,6 +23,9 @@ resource "google_kms_crypto_key" "gcp_kms_crypto_key" {
 
   lifecycle {
     prevent_destroy = false
+    ignore_changes  = [
+    labels,
+    ]
   }
 }
 
