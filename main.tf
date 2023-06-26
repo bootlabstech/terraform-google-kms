@@ -39,3 +39,7 @@ resource "google_kms_crypto_key_iam_binding" "kms_key_iam_decrypter" {
   role          = "roles/cloudkms.cryptoKeyEncrypterDecrypter"
   members       = each.value.kms_key_members
 }
+
+data "google_project" "current" {
+  project_id = var.project_id
+}
