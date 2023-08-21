@@ -7,7 +7,6 @@ variable "kms_keyring_name" {
 variable "location_id" {
   description = "The location for the KeyRing. A full list of valid locations can be found by running gcloud kms locations list."
   type        = string
-  
 }
 
 variable "kms_crypto_keys" {

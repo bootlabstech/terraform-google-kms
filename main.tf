@@ -1,5 +1,5 @@
 resource "google_kms_key_ring" "gcp_kms_keyring" {
-  name     = "${var.kms_keyring_name}"
+  name     = var.kms_keyring_name
   location = var.location_id
   project  = var.project_id
 }
@@ -22,7 +22,7 @@ resource "google_kms_crypto_key" "gcp_kms_crypto_key" {
   }
 
   lifecycle {
-    ignore_changes = [labels]
+    ignore_changes  = [labels]
     prevent_destroy = false
   }
 }
