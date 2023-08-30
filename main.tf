@@ -1,6 +1,3 @@
-data "google_project" "my_project" {
-  project_id = var.project_id
-}
 resource "google_kms_key_ring" "gcp_kms_keyring" {
   name     = var.kms_keyring_name
   location = var.location_id
