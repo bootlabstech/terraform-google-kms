@@ -1,3 +1,6 @@
+data "google_project" "current" {
+  project_id = var.project_id
+}
 resource "google_kms_key_ring" "gcp_kms_keyring" {
   name     = var.kms_keyring_name
   location = var.location_id
@@ -41,6 +44,4 @@ resource "google_kms_crypto_key_iam_binding" "kms_key_iam_decrypter" {
   members       = each.value.kms_key_members
 }
 
-data "google_project" "current" {
-  project_id = var.project_id
-}
+
