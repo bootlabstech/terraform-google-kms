@@ -15,6 +15,7 @@ resource "google_kms_crypto_key" "gcp_kms_crypto_key" {
   rotation_period = each.value.rotation_period
 
   purpose = each.value.purpose
+  destroy_scheduled_duration = var.destroy_scheduled_duration 
 
   dynamic "version_template" {
     for_each = each.value.set_version_template == true ? [1] : []

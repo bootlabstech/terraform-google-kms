@@ -34,6 +34,12 @@ variable "kms_keyring_members" {
   default     = []
 }
 
+variable "destroy_scheduled_duration" {
+  type = number
+  description = "Kms deletion recovery time"
+  default = 2880
+}
+
 # variable "kms_key_name" {
 #   description = "The resource name for the CryptoKey."
 #   type        = list(string)
