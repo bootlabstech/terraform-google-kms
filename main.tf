@@ -24,6 +24,7 @@ resource "google_kms_crypto_key" "gcp_kms_crypto_key" {
       protection_level = each.value.protection_level
     }
   }
+  
 
   lifecycle {
     ignore_changes  = [labels]
