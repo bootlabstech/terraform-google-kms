@@ -37,7 +37,7 @@ variable "kms_keyring_members" {
 variable "destroy_scheduled_duration" {
   type = string
   description = "Kms deletion recovery time"
-  default = "2880h"
+  default = "10368000s"
 }
 
 # variable "kms_key_name" {
