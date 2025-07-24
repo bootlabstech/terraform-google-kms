@@ -42,6 +42,9 @@ resource "google_kms_crypto_key_iam_binding" "kms_key_iam_decrypter" {
   crypto_key_id = google_kms_crypto_key.gcp_kms_crypto_key[each.key].id
   role          = "roles/cloudkms.cryptoKeyEncrypterDecrypter"
   members       = each.value.kms_key_members
+  lifecycle {
+    ignore_changes = [ members ]
+  }
 }
 
 
